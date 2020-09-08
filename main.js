@@ -4,7 +4,12 @@ const handlebars = require('express-handlebars');
 const port = 8000;
 
 //Inport Route
-const route=require('./routes');
+const route = require('./routes');
+
+//Database
+const db = require('./mongodb');
+//Connect DB
+db.connect();
 
 //Use static file
 app.use(express.static('public'));
