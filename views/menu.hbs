@@ -1,0 +1,18 @@
+<div class="mt4">
+    <div class="row">
+        {{#each drinks}}
+        <div class="col-sm-6 col-lg-4">
+            <div class="card card-drink-item" style="width: 18rem;">
+                <img src="{{this.img}}" class="card-img-top" alt="Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.name}}</h5>
+                    <p class="card-text">{{this.description}}</p>
+                    <div class="detail"><a href="#" class="btn btn-primary">Chi tiết</a>
+                        <h4 class="price">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {{this.price}} VNĐ</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>

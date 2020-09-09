@@ -1,0 +1,10 @@
+.card-drink-item{
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+.detail{
+    display: flex;
+}
+.price{
+    margin-top:5px;
+}

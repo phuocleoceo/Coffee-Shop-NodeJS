@@ -1,16 +1,16 @@
 const Drink = require('../models/Drink');
+
 class MenuController {
 
     // [GET] /
-    menu(req, res) {
-        // res.render('menu');
-        Drink.find({}, function (err, drinks) {
-            if (!err) res.json(drinks);
-            else {
-                res.status(400).json({ error: 'Error!!!!' });
-            }
-        });
+    menu(req, res, next) {
+        Drink.find({})
+            .then(drinks => {
+                drinks=drinks.map(drinks=>drinks.toObject())
+                res.render('menu', { drinks: drinks }) 
+            })
+            .catch(next);
     }
 }
 
-module.exports = new MenuController;
+module.exports = new MenuController; 
