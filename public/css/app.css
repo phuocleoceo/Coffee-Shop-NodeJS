@@ -8,3 +8,16 @@
 .price{
     margin-top:5px;
 }
+a{
+    color: black;
+    text-decoration: none;
+}
+.detail-name{
+    font-size: 40px;
+    color:yellowgreen;
+}
+.detail-description{
+    font-size: 20px;
+    color: yellow;
+    width: 550px;
+}
