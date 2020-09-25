@@ -16,9 +16,28 @@ class MenuController {
         Drink.findOne({ slug: req.params.slug })  //get slug parametter from URL
             .then(drinks => {
                 drinks = drinks.toObject();
-                res.render('drinks_detail/show',{ drinks: drinks });
+                res.render('drinks/show', { drinks: drinks });
             })
             .catch(next);
+    }
+
+    // [GET] /create
+    create(req, res, next) {
+        res.render('drinks/create');
+    }
+
+    // [POST] /store
+    store(req, res, next) {
+        res.json(req.body);
+        console.log(req.boby);
+         
+        // res.send('OK');        
+        // const drink = new Drink(req.boby);
+        // drink.save()
+        //     .then(() => res.redirect('/menu'))
+        //     .catch(error => {
+
+        //     });
     }
 }
 

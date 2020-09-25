@@ -13,11 +13,22 @@ a{
     text-decoration: none;
 }
 .detail-name{
-    font-size: 40px;
+    font-size: 55px;
     color:yellowgreen;
+    margin-left: 125px;
 }
 .detail-description{
     font-size: 20px;
     color: yellow;
-    width: 550px;
+    width: 560px;
+}
+.create{
+    text-align: left;    
+}
+.create-page{
+    color:yellow;
+    font-size: 20px;
+}
+.create-button{
+    margin-left: 40%;
 }
