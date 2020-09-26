@@ -28,12 +28,9 @@ class MenuController {
 
     // [POST] /store
     store(req, res, next) {
-        res.json(req.body);
-        console.log(req.boby);
-         
-        // res.send('OK');        
-        // const drink = new Drink(req.boby);
-        // drink.save()
+        console.log(req.body);
+        // const newDrink = new Drink(req.boby);
+        // newDrink.save()
         //     .then(() => res.redirect('/menu'))
         //     .catch(error => {
 
