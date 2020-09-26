@@ -29,12 +29,12 @@ class MenuController {
     // [POST] /store
     store(req, res, next) {
         console.log(req.body);
-        // const newDrink = new Drink(req.boby);
-        // newDrink.save()
-        //     .then(() => res.redirect('/menu'))
-        //     .catch(error => {
-
-        //     });
+        const newDrink = new Drink(req.body);        
+        newDrink.save()
+            .then(() => res.redirect('/menu'))
+            .catch(error => {
+                console.log('Cannot Create New Drink');
+            });
     }
 }
 

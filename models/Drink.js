@@ -11,6 +11,8 @@ const Drink = new Schema({
     description: String,
     slug: { type: String, slug: 'name' },
     videoID: String
+}, {
+    versionKey: false //remove __v:
 });
 
 module.exports = mongoose.model('Drink', Drink); 
