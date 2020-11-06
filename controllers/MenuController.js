@@ -16,7 +16,7 @@ class MenuController {
         Drink.findOne({ slug: req.params.slug })  //get slug parametter from URL //One:1 document
             .then(drinks => {
                 drinks = drinks.toObject();
-                res.render('drinks/show', { drinks: drinks });
+                res.render('drinks/detail', { drinks: drinks });
             })
             .catch(next);
     }
@@ -29,13 +29,40 @@ class MenuController {
     // [POST] /store
     store(req, res, next) {
         console.log(req.body);
-        const newDrink = new Drink(req.body);        
+        const newDrink = new Drink(req.body);
         newDrink.save()
             .then(() => res.redirect('/menu'))
             .catch(error => {
                 console.log('Cannot Create New Drink');
             });
     }
+
+    // [GET] /manage
+    manage(req, res, next) {
+        Drink.find({})
+            .then(drinks => {
+                drinks = drinks.map(drinks => drinks.toObject());
+                res.render('drinks/manage', { drinks: drinks });
+            })
+            .catch(next);
+    }
+
+    // [GET] /manage/:id/edit
+    edit(req, res, next) {
+        Drink.findById(req.params.id)
+            .then(drinks => {
+                drinks = drinks.toObject();
+                res.render('drinks/edit', { drinks: drinks });
+            })
+            .catch(next);
+    }
+    // [PUT] /manage/:id
+    update(req, res, next) {
+        Drink.updateOne({ _id: req.params.id }, req.body)
+            .then(() => res.redirect('/menu/manage'))
+            .catch(next);
+    }
+
 }
 
 module.exports = new MenuController; 

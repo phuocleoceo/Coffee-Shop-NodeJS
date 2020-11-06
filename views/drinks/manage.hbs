@@ -1,0 +1,32 @@
+<div class="mt-4">
+	<h2 style="text-align: center;color:green">Quản lý đồ uống</h2>
+	<table class="table mt-4">
+		<thead>
+			<tr>
+				<th scope="col">STT</th>
+				<th scope="col">Tên</th>
+				<th scope="col">Giá</th>
+				<th scope="col">Ảnh</th>
+				<th scope="col">Mô tả</th>
+				<th scope="col">Video ID</th>
+				<th scope="col"></th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each drinks}}
+			<tr>
+				<th scope="row">{{SUM @index 1}}</th>
+				<td>{{this.name}}</td>
+				<td>{{this.price}}</td>
+				<td>{{this.img}}</td>
+				<td>{{this.description}}</td>
+				<td>{{this.videoID}}</td>
+				<td>
+					<a href="/menu/manage/{{this._id}}/edit" class="btn btn-success">Sửa</a>
+					<a href="" class="btn btn-danger mt-1">Xoá</a>
+				</td>
+			</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</div> 
