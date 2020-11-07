@@ -56,13 +56,19 @@ class MenuController {
             })
             .catch(next);
     }
-    // [PUT] /manage/:id
+    // [PUT] /manage/:id/edit
     update(req, res, next) {
         Drink.updateOne({ _id: req.params.id }, req.body)
             .then(() => res.redirect('/menu/manage'))
             .catch(next);
     }
 
+    // [DELETE] /manage/:id
+    destroy(req, res, next) {
+        Drink.deleteOne({ _id: req.params.id })
+            .then(() => res.redirect('back'))  //xoá xong thì quay lại trang manages
+            .catch(next);
+    }
 }
 
 module.exports = new MenuController; 
